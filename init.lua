@@ -32,6 +32,7 @@ vim.keymap.set("n", "<leader>y", "\"+y", { desc = "Set up yanking into clipboard
 vim.keymap.set("v", "<leader>y", "\"+y", { desc = "Yank selection into clipboard" })
 
 vim.keymap.set("n", "<leader>pp", "\"*p", { desc = "Paste clipboard" })
+vim.keymap.set("v", "<leader>p", "\"*p", { desc = "Paste clipboard" })
 
 -- Formatting
 vim.keymap.set("n", "<leader>f", function()
