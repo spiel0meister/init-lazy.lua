@@ -75,6 +75,16 @@ vim.opt.fillchars = "fold: "
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
+-- Highlight yanked text
+vim.api.nvim_create_autocmd("TextYankPost", {
+    desc = "Highlight yanked text",
+    group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end
+})
+
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
