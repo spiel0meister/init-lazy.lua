@@ -1,16 +1,16 @@
 return {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v3.x',
+    "VonHeikemen/lsp-zero.nvim",
+    branch = "v3.x",
     dependencies = {
-        'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig.nvim',
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
 
         -- LSP Support
-        'neovim/nvim-lspconfig',
+        "neovim/nvim-lspconfig",
         -- Autocompletion
-        'hrsh7th/nvim-cmp',
-        'hrsh7th/cmp-nvim-lsp',
-        'L3MON4D3/LuaSnip',
+        "hrsh7th/nvim-cmp",
+        "hrsh7th/cmp-nvim-lsp",
+        "L3MON4D3/LuaSnip",
         "lukas-reineke/lsp-format.nvim"
     },
     config = function()
@@ -36,11 +36,11 @@ return {
             })
         })
 
-        require('mason').setup({})
-        require('mason-lspconfig').setup({
+        require("mason").setup({})
+        require("mason-lspconfig").setup({
             -- Replace the language servers listed here
             -- with the ones you want to install
-            ensure_installed = { 'tsserver', 'rust_analyzer', 'pyright', 'hls', "clangd", "lua_ls", "asm_lsp", "neocmake", "html", "bashls", "cssls" },
+            ensure_installed = { "tsserver", "rust_analyzer", "pyright", "clangd", "lua_ls", "asm_lsp", "neocmake", "html", "bashls", "cssls" },
             handlers = {
                 function(server)
                     if server ~= "clangd" then
