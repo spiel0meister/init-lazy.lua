@@ -85,6 +85,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end
 })
 
+-- Neovide Settings
+vim.g.neovide_cursor_animation_length = 0
+vim.g.neovide_cursor_trail_size = 0
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
