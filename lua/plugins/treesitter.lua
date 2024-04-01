@@ -4,7 +4,7 @@ return {
         "nvim-treesitter/playground",
         "nvim-treesitter/nvim-treesitter-context",
     },
-    -- run = ":TSUpdate",
+    run = ":TSUpdate",
     config = function()
         require('nvim-treesitter.configs').setup {
             -- A list of parser names, or "all" (the five listed parsers should always be installed)
@@ -30,6 +30,16 @@ return {
                 -- Using this option may slow down your editor, and you may see some duplicate highlights.
                 -- Instead of true it can also be a list of languages
                 additional_vim_regex_highlighting = false,
+            },
+
+            incremental_selection = {
+                enable = true,
+                keymaps = {
+                    init_selection = "<leader>nis", -- set to `false` to disable one of the mappings
+                    node_incremental = "<leader>nsi",
+                    scope_incremental = "<leader>ssi",
+                    node_decremental = "<leader>nsd",
+                },
             },
         }
     end
