@@ -9,9 +9,6 @@ vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "Open diag
 vim.keymap.set("n", "<leader>dgn", vim.diagnostic.goto_next, { desc = "Go to next diagnostics" })
 vim.keymap.set("n", "<leader>dgp", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostics" })
 
--- Git
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Open Git (vim-fugitive, probably)" })
-
 -- Exotic motions
 vim.keymap.set("n", "<leader>jb", "%", { desc = "Jump to next pair" })
 
