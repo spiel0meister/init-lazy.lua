@@ -40,7 +40,7 @@ return {
         require("mason-lspconfig").setup({
             -- Replace the language servers listed here
             -- with the ones you want to install
-            ensure_installed = { "tsserver", "rust_analyzer", "pyright", "clangd", "lua_ls", "asm_lsp", "neocmake", "html", "bashls", "cssls" },
+            ensure_installed = { "rust_analyzer", "clangd", "lua_ls", "asm_lsp", "bashls" },
             handlers = {
                 function(server)
                     if server ~= "clangd" then

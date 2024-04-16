@@ -1,6 +1,6 @@
 import time, os, pyautogui
 
-token = os.environ["CODEIUM_TOKEN"]
+token = os.environ.get("CODEIUM_TOKEN")
 if token is None:
     print("Missing environment variable. Declare $CODEIUM_TOKEN!")
     exit(1)
