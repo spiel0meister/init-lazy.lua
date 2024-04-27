@@ -4,7 +4,8 @@ return {
   -- Optional dependencies
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-      require("oil").setup({
+      local oil = require("oil")
+      oil.setup({
           columns = {
               "icon",
               "size",
@@ -15,6 +16,6 @@ return {
           }
       })
 
-      vim.keymap.set("n", "<leader>pv", require("oil").open, { desc = "Open parent directory" })
+      vim.keymap.set("n", "<leader>pv", oil.open, { desc = "Open parent directory" })
   end
 }

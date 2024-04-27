@@ -17,6 +17,8 @@ return {
 		end, { desc = "Search for string" })
 		vim.keymap.set("n", "<leader>pds", builtin.lsp_document_symbols, { desc = "Fuzzy serch Document symbols" })
 		vim.keymap.set("n", "<leader>pws", builtin.lsp_workspace_symbols, { desc = "Fuzzy serch Workspace symbols" })
+		vim.keymap.set("n", "<leader>pr", builtin.lsp_references, { desc = "Fuzzy serch LSP references" })
 		vim.keymap.set("n", "<leader>ph", builtin.help_tags, { desc = "Fuzzy serch Help tags" })
+		vim.keymap.set("n", "<leader>pb", builtin.buffers, { desc = "Fuzzy serch Vim buffers" })
 	end
 }
