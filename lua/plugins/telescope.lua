@@ -11,7 +11,7 @@ return {
 		vim.keymap.set("n", "<leader>pcf", function()
 		    builtin.find_files({ cwd = vim.fn.stdpath("config") })
 		end, { desc = "Fuzzy search files in config" })
-		vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "Fuzzy search git files" })
+		vim.keymap.set("n", "<leader>pg", builtin.git_files, { desc = "Fuzzy search git files" })
 		vim.keymap.set("n", "<leader>ps", function()
 		    builtin.grep_string({ search = vim.fn.input("Grep > ") })
 		end, { desc = "Search for string" })
