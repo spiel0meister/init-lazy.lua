@@ -14,6 +14,8 @@ return {
         "lukas-reineke/lsp-format.nvim"
     },
     config = function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+
         local lsp_zero = require("lsp-zero")
         local lsp_config = require("lspconfig")
         local lsp_format = require("lsp-format")
