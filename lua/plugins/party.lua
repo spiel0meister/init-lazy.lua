@@ -27,6 +27,9 @@ return {
         "tpope/vim-commentary"
     },
     {
+        "paretje/nvim-man"
+    },
+    {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         ft = { "markdown" },
