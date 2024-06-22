@@ -11,7 +11,7 @@ vim.api.nvim_create_user_command("Man", function (tabl)
     local man_page = vim.fn.system("man " .. tabl.args)
     local man_page_lines = mysplit(man_page)
 
-    local bufnr = vim.api.nvim_create_buf(true, true)
+    local bufnr = vim.api.nvim_create_buf(false, true)
     vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, man_page_lines)
     vim.cmd("sb " .. bufnr)
 end, { nargs = 1 })
