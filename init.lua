@@ -17,3 +17,5 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins", { checker = { notify = false } })
 require("man")
 require("temp")
+
+vim.cmd("colorscheme monokai")
