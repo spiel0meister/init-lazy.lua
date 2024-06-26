@@ -3,9 +3,7 @@ require("keymaps")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
+  vim.fn.system({ "git", "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
     "--branch=stable", -- latest stable release
@@ -18,4 +16,4 @@ require("lazy").setup("plugins", { checker = { notify = false } })
 require("man")
 require("temp")
 
-vim.cmd("colorscheme monokai")
+vim.cmd("colorscheme catppuccin-mocha")
