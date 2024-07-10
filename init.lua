@@ -12,8 +12,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins", { checker = { notify = false } })
-require("man")
+require("lazy").setup("plugins", {
+    checker = {
+        enabled = true,
+        notify = false
+    }
+})
+
 require("temp")
+require("man")
 
 vim.cmd("colorscheme catppuccin-mocha")
