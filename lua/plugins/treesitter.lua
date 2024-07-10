@@ -2,11 +2,12 @@ return {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
         "nvim-treesitter/playground",
+        "nvim-treesitter/nvim-treesitter-textobjects",
         "nvim-treesitter/nvim-treesitter-context",
     },
     run = ":TSUpdate",
     config = function()
-        require('nvim-treesitter.configs').setup {
+        require('nvim-treesitter.configs').setup({
             -- A list of parser names, or "all" (the five listed parsers should always be installed)
             ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "rust", "html", "css", "nasm" },
 
@@ -41,6 +42,32 @@ return {
                     node_decremental = "<leader>nsd",
                 },
             },
-        }
+
+            textobject = {
+                select = {
+                    enable = true,
+                    lookahead = true,
+                    keymaps = {
+                        ["if"] = "@function.inner",
+                        ["af"] = "@function.outer",
+                        ["ic"] = "@class.inner",
+                        ["ac"] = "@class.outer",
+                        ["ia"] = "@parameter.inner",
+                        ["aa"] = "@parameter.outer",
+                        ["il"] = "@loop.inner",
+                        ["al"] = "@loop.outer",
+                    }
+                },
+                -- Modes:
+                --  - v - charwise
+                --  - V - linewise
+                --  - <c-v> - blockwise
+                selection_modes = {
+                    ['@parameter.*'] = 'v',
+                    ['@function.*'] = 'V',
+                    ['@class.*'] = 'V',
+                },
+            }
+        })
     end
 }
