@@ -5,21 +5,6 @@ local function setup_custom_snippets(ls)
 
     local fmt = require("luasnip.extras.fmt").fmt
 
-    ls.add_snippets("lua", {
-        s("lf", fmt(
-            [[
-                local function {}({})
-                    {}
-                end
-            ]],
-            {
-                i(1, "name"),
-                i(2, "args"),
-                i(0),
-            }
-        ))
-    })
-
     ls.add_snippets("c", {
         s("pf", fmt("printf(\"{}\", {}){}", {
             i(1),
