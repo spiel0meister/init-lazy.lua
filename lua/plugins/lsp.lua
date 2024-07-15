@@ -1,7 +1,9 @@
 local function setup_custom_snippets(ls)
+    local extras = require("luasnip.extras")
     local s = ls.snippet
     local t = ls.text_node
     local i = ls.insert_node
+    local rep = extras.rep
 
     local fmt = require("luasnip.extras.fmt").fmt
 
@@ -16,6 +18,20 @@ local function setup_custom_snippets(ls)
             i(1),
             i(2),
             i(0)
+        })),
+
+        s("struct", fmt([[
+        typedef struct {} {};
+        struct {} {{
+            {}
+        }};{}
+        ]],
+        {
+            rep(1),
+            rep(1),
+            i(1),
+            i(2),
+            i(0),
         }))
     })
 end
