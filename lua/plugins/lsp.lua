@@ -8,13 +8,7 @@ local function setup_custom_snippets(ls)
     local fmt = require("luasnip.extras.fmt").fmt
 
     ls.add_snippets("c", {
-        s("pf", fmt("printf(\"{}\", {}){}", {
-            i(1),
-            i(2),
-            i(0)
-        })),
-
-        s("epf", fmt("fprintf(stderr, \"{}\", {}){}", {
+        s("epf", fmt("fprintf(stderr, \"{}\", {});{}", {
             i(1),
             i(2),
             i(0)
@@ -24,15 +18,18 @@ local function setup_custom_snippets(ls)
         typedef struct {} {};
         struct {} {{
             {}
-        }};{}
+        }};
         ]],
         {
             rep(1),
             rep(1),
             i(1),
-            i(2),
             i(0),
         }))
+    })
+
+    ls.add_snippets("markdown", {
+        s("code", fmt("```{}\n{}\n```", { i(1), i(0) }))
     })
 end
 

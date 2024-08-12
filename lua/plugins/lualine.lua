@@ -1,7 +1,7 @@
 local function codeium_status()
     local status = vim.api.nvim_call_function("codeium#GetStatusString", {})
-    if status == 'OFF' then
-        return "Codeium: OFF"
+    if #status == 3 then
+        return "Codeium: " .. status
     else
         return "Codeium:" .. status
     end
