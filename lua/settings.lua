@@ -20,7 +20,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Font
-vim.opt.guifont = "JetBrainsMono Nerd Font:14"
+vim.opt.guifont = "Iosevka_Regular:14"
 vim.g.have_nerd_font = true
 
 -- Spell check
