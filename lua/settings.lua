@@ -33,6 +33,9 @@ vim.opt.termguicolors = true
 -- transparent fold text (source: https://github.com/neovim/neovim/pull/20750)
 vim.opt.foldtext = ""
 vim.opt.fillchars = "fold: "
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = false
 
 -- Scroll
 vim.opt.scrolloff = 8

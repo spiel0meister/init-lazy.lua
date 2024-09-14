@@ -35,6 +35,13 @@ end, { desc = "Format file (with LSP)" })
 vim.keymap.set("n", "<leader>rt", ">>", { desc = "Indent" })
 vim.keymap.set("n", "<leader>lt", "<<", { desc = "Remove indent" })
 
+-- Folding
+vim.keymap.set("n", "<leader>f+", "zo", { desc = "Open fold" })
+vim.keymap.set("n", "<leader>f*", "zO", { desc = "Open all folds in fold" })
+vim.keymap.set("n", "<leader>f-", "zc", { desc = "Close fold" })
+vim.keymap.set("n", "<leader>f_", "zC", { desc = "Close all folds in fold" })
+vim.keymap.set("n", "<leader>ff", "za", { desc = "Toggle fold" })
+
 -- The MIT License
 vim.keymap.set("n", "<leader>MIT", [[i
 Copyright 2024 Žan Sovič <soviczan7@gmail.com>
