@@ -29,18 +29,19 @@ vim.keymap.set("n", "<leader>pp", "\"*p", { desc = "Paste clipboard" })
 vim.keymap.set("v", "<leader>p", "\"*p", { desc = "Paste clipboard" })
 
 -- Formatting
-vim.keymap.set("n", "<leader>f", function()
+vim.keymap.set("n", "<leader>lf", function()
     vim.lsp.buf.format()
 end, { desc = "Format file (with LSP)" })
-vim.keymap.set("n", "<leader>rt", ">>", { desc = "Indent" })
-vim.keymap.set("n", "<leader>lt", "<<", { desc = "Remove indent" })
+vim.keymap.set("n", "<leader>tr", ">>", { desc = "Indent" })
+vim.keymap.set("n", "<leader>tl", "<<", { desc = "Remove indent" })
 
 -- Folding
-vim.keymap.set("n", "<leader>f+", "zo", { desc = "Open fold" })
-vim.keymap.set("n", "<leader>f*", "zO", { desc = "Open all folds in fold" })
-vim.keymap.set("n", "<leader>f-", "zc", { desc = "Close fold" })
-vim.keymap.set("n", "<leader>f_", "zC", { desc = "Close all folds in fold" })
+vim.keymap.set("n", "<leader>fo", "zo", { desc = "Open fold" })
+vim.keymap.set("n", "<leader>fO", "zO", { desc = "Open all folds in fold" })
+vim.keymap.set("n", "<leader>fc", "zc", { desc = "Close fold" })
+vim.keymap.set("n", "<leader>fC", "zC", { desc = "Close all folds in fold" })
 vim.keymap.set("n", "<leader>ff", "za", { desc = "Toggle fold" })
+vim.keymap.set("n", "<leader>fF", "zA", { desc = "Toggle fold recursively" })
 
 -- The MIT License
 vim.keymap.set("n", "<leader>MIT", [[i
