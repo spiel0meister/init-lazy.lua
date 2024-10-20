@@ -10,12 +10,12 @@ vim.keymap.set("n", "<leader>dgp", vim.diagnostic.goto_prev, { desc = "Go to pre
 vim.keymap.set("n", "<leader>jb", "%", { desc = "Jump to next pair" })
 
 -- Windows
-vim.keymap.set("n", "<leader>w", "<C-w>", { desc = "Don't have time to press Ctrl+w" })
+vim.keymap.set("n", "<leader>ww", "<C-w>", { desc = "Don't have time to press Ctrl+w" })
 vim.keymap.set("n", "<leader>sv", "<C-w><C-v>", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
-vim.keymap.set("n", "<leader>cw", "<C-w>c", { desc = "Close window but keep buffer" })
-vim.keymap.set("n", "<leader>kw", "<C-w>o", { desc = "Close all but selected window" })
-vim.keymap.set("n", "<leader>=w", "<C-w>=", { desc = "Re size windows to equal size" })
+vim.keymap.set("n", "<leader>wc", "<C-w>c", { desc = "Close window but keep buffer" })
+vim.keymap.set("n", "<leader>wk", "<C-w>o", { desc = "Close all but selected window" })
+vim.keymap.set("n", "<leader>w=", "<C-w>=", { desc = "Re size windows to equal size" })
 
 -- Saving
 vim.keymap.set("n", "<leader>sf", "<CMD>w<CR>", { desc = "Save file" })
@@ -43,6 +43,9 @@ vim.keymap.set("n", "<leader>fC", "zC", { desc = "Close all folds in fold" })
 vim.keymap.set("n", "<leader>ff", "za", { desc = "Toggle fold" })
 vim.keymap.set("n", "<leader>fF", "zA", { desc = "Toggle fold recursively" })
 
+-- cTags
+vim.keymap.set("n", "<leader>tgd", "g]", { desc = "Go to definition (ctags)" })
+
 -- The MIT License
 vim.keymap.set("n", "<leader>MIT", [[i
 Copyright 2024 Žan Sovič <soviczan7@gmail.com>
@@ -69,3 +72,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 -- Dashes
 vim.keymap.set("n", "<leader>DD", "i------------------------<ESC>")
+
+-- Quickfix
+vim.keymap.set("n", "<leader>cc", "<CMD>cc<CR>")
+vim.keymap.set("n", "<leader>cn", "<CMD>cn<CR>")
+vim.keymap.set("n", "<leader>cp", "<CMD>cp<CR>")
