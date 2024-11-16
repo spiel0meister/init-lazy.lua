@@ -4,8 +4,17 @@ return {
     },
     {
         "folke/todo-comments.nvim",
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+        },
         config = function ()
-            require("todo-comments").setup()
+            local todo_comments = require("todo-comments")
+            todo_comments.setup()
+
+            vim.keymap.set("n", "<leader>tdn", todo_comments.jump_next)
+            vim.keymap.set("n", "<leader>tdp", todo_comments.jump_prev)
+
+            vim.keymap.set("n", "<leader>ptd", vim.cmd["TodoTelescope"])
         end
     },
     {
