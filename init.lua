@@ -24,6 +24,5 @@ require("lazy").setup({
 })
 
 require("temp")
-require("man")
 
 vim.cmd("colorscheme catppuccin-mocha")
