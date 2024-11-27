@@ -25,7 +25,14 @@ local function setup_custom_snippets(ls)
             rep(1),
             i(1),
             i(0),
-        }))
+        })),
+
+        s("guard", fmt([[
+        #ifndef {}_H
+        #define {}_H
+        {}
+        #endif // {}_H
+        ]], { i(1), rep(1), i(0), rep(1) }))
     })
 
     ls.add_snippets("markdown", {
