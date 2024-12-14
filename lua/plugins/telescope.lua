@@ -2,7 +2,8 @@ return {
 	"nvim-telescope/telescope.nvim",
 	branch = "0.1.x",
 	dependencies = {
-		"nvim-lua/plenary.nvim"
+		"nvim-lua/plenary.nvim",
+        { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	},
 	config = function()
 		local builtin = require("telescope.builtin")
