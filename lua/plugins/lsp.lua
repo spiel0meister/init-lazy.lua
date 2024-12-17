@@ -148,8 +148,6 @@ return {
 
         require("mason").setup({})
         require("mason-lspconfig").setup({
-            -- Replace the language servers listed here
-            -- with the ones you want to install
             ensure_installed = { "rust_analyzer", "clangd", "lua_ls", "bashls" },
             handlers = {
                 function(server)
@@ -170,7 +168,7 @@ return {
                             }
                         }
                     })
-                end
+                end,
             }
         })
     end
