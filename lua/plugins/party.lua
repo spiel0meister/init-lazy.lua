@@ -24,12 +24,6 @@ return {
         end
     },
     {
-        'lukas-reineke/indent-blankline.nvim', -- Add indentation guides even on blank lines
-        config = function ()
-            require("ibl").setup()
-        end
-    },
-    {
         "mg979/vim-visual-multi",
     },
     {
