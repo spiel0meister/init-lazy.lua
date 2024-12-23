@@ -150,14 +150,15 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = { "rust_analyzer", "clangd", "lua_ls", "bashls" },
             handlers = {
-                function(server)
-                    if server ~= "clangd" then
-                        lsp_config[server].setup({ on_attach = lsp_format_on_attach })
+                function(name)
+                    if name == 'clangd' then
+                        lsp_config[name].setup({
+                            filetypes = { 'c', 'cpp', 'h', 'hpp' }
+                        })
                     else
-                        lsp_config[server].setup({})
+                        lsp_config[name].setup({})
                     end
                 end,
-                biome = lsp_zero.noop,
                 lua_ls = function()
                     lsp_config.lua_ls.setup({
                         settings = {
