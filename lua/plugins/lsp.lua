@@ -153,7 +153,7 @@ return {
                 function(name)
                     if name == 'clangd' then
                         lsp_config[name].setup({
-                            filetypes = { 'c', 'cpp', 'h', 'hpp' }
+                            filetypes = { 'c', 'cpp', 'h', 'hpp' },
                         })
                     else
                         lsp_config[name].setup({})
