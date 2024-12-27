@@ -3,6 +3,10 @@ return {
         "ggandor/leap.nvim",
     },
     {
+        "folke/lazydev.nvim",
+        ft = "lua",
+    },
+    {
         "folke/todo-comments.nvim",
         dependencies = {
             "nvim-telescope/telescope.nvim",
