@@ -148,7 +148,7 @@ return {
 
         require("mason").setup({})
         require("mason-lspconfig").setup({
-            ensure_installed = { "rust_analyzer", "clangd", "lua_ls", "bashls" },
+            ensure_installed = { "rust_analyzer", "clangd", "lua_ls" },
             handlers = {
                 function(name)
                     if name == 'clangd' then

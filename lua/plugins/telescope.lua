@@ -10,9 +10,7 @@ return {
 
 		vim.keymap.set("n", "<leader>pm", builtin.man_pages, { desc = "Fuzzy search man pages" })
 		vim.keymap.set("n", "<leader>pf", builtin.find_files, { desc = "Fuzzy search files" })
-		vim.keymap.set("n", "<leader>pcf", function()
-		    builtin.find_files({ cwd = vim.fn.stdpath("config") })
-		end, { desc = "Fuzzy search files in config" })
+		vim.keymap.set("n", "<leader>pcf", function() builtin.find_files({ cwd = vim.fn.stdpath("config") }) end, { desc = "Fuzzy search files in config" })
 		vim.keymap.set("n", "<leader>pg", builtin.git_files, { desc = "Fuzzy search git files" })
 		vim.keymap.set("n", "<leader>ps", builtin.live_grep, { desc = "Search for string" })
 		vim.keymap.set("n", "<leader>pds", builtin.lsp_document_symbols, { desc = "Fuzzy serch Document symbols" })
