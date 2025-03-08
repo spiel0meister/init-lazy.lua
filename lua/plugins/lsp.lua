@@ -151,13 +151,12 @@ return {
             ensure_installed = { "rust_analyzer", "clangd", "lua_ls" },
             handlers = {
                 function(name)
-                    if name == 'clangd' then
-                        lsp_config[name].setup({
-                            filetypes = { 'c', 'cpp', 'h', 'hpp' },
-                        })
-                    else
-                        lsp_config[name].setup({})
-                    end
+                    lsp_config[name].setup({})
+                end,
+                clangd = function()
+                    lsp_config.clangd.setup({
+                        filetypes = { 'c', 'cpp', 'h', 'hpp' },
+                    })
                 end,
                 lua_ls = function()
                     lsp_config.lua_ls.setup({
