@@ -58,6 +58,20 @@ end
 
 M.toggle_show_dirs = function()
     local bufnr = vim.api.nvim_create_buf(false, true)
+    vim.api.nvim_create_autocmd({ "BufLeave" }, {
+        buffer = bufnr,
+        callback = function(e)
+            winnr = 0
+            dirs = {}
+
+            local lines = vim.api.nvim_buf_get_lines(e.buf, 0, -1, true)
+            for _, line in ipairs(lines) do
+                if vim.fn.isdirectory(line) == 1 then
+                    M.add_dir(line)
+                end
+            end
+        end,
+    })
 
     vim.api.nvim_buf_set_lines(bufnr, 0, -1, true, dirs)
 
