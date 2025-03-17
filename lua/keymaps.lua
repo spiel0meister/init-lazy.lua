@@ -41,6 +41,12 @@ vim.keymap.set("n", "<leader>fC", "zC", { desc = "Close all folds in fold" })
 vim.keymap.set("n", "<leader>ff", "za", { desc = "Toggle fold" })
 vim.keymap.set("n", "<leader>fF", "zA", { desc = "Toggle fold recursively" })
 
+-- Move line
+vim.keymap.set("n", "<A-k>", "ddkkp", { desc = "Move line up" })
+vim.keymap.set("n", "<A-j>", "ddp", { desc = "Move line down" })
+vim.keymap.set("v", "<A-k>", "dkkp", { desc = "Move line up (selection)" })
+vim.keymap.set("v", "<A-j>", "dp", { desc = "Move line down (selection)" })
+
 -- The MIT License
 vim.keymap.set("n", "<leader>MIT", [[i
 Copyright 2024 Žan Sovič <soviczan7@gmail.com>
