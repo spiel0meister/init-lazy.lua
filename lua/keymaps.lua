@@ -35,11 +35,8 @@ end, { desc = "Format file (with LSP)" })
 
 -- Folding
 vim.keymap.set("n", "<leader>fo", "zo", { desc = "Open fold" })
-vim.keymap.set("n", "<leader>fO", "zO", { desc = "Open all folds in fold" })
 vim.keymap.set("n", "<leader>fc", "zc", { desc = "Close fold" })
-vim.keymap.set("n", "<leader>fC", "zC", { desc = "Close all folds in fold" })
 vim.keymap.set("n", "<leader>ff", "za", { desc = "Toggle fold" })
-vim.keymap.set("n", "<leader>fF", "zA", { desc = "Toggle fold recursively" })
 
 -- Move line
 vim.keymap.set("n", "<A-k>", "ddkkp", { desc = "Move line up" })
@@ -49,7 +46,7 @@ vim.keymap.set("v", "<A-j>", "dp", { desc = "Move line down (selection)" })
 
 -- The MIT License
 vim.keymap.set("n", "<leader>MIT", [[i
-Copyright 2024 Žan Sovič <soviczan7@gmail.com>
+Copyright 2025 Žan Sovič <soviczan7@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -73,8 +70,3 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 -- Dashes
 vim.keymap.set("n", "<leader>DD", "i------------------------<ESC>")
-
--- Quickfix
-vim.keymap.set("n", "<leader>cc", "<CMD>cc<CR>")
-vim.keymap.set("n", "<leader>cn", "<CMD>cn<CR>")
-vim.keymap.set("n", "<leader>cp", "<CMD>cp<CR>")
