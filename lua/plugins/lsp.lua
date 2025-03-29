@@ -105,6 +105,8 @@ return {
             end
         end, { silent = true })
 
+        vim.keymap.set("i", "<C-S>", vim.lsp.buf.signature_help)
+
         cmp.setup({
             mapping = cmp.mapping.preset.insert({
                 ["<C-Space>"] = cmp.mapping.complete(),
