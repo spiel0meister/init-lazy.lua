@@ -61,6 +61,7 @@ return {
         "lukas-reineke/lsp-format.nvim",
     },
     config = function()
+        vim.diagnostic.config({ virtual_text = true })
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 
         local lsp_zero = require("lsp-zero")
@@ -105,7 +106,7 @@ return {
             end
         end, { silent = true })
 
-        vim.keymap.set("i", "<C-S>", vim.lsp.buf.signature_help)
+        vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help)
 
         cmp.setup({
             mapping = cmp.mapping.preset.insert({
