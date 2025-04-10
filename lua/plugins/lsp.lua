@@ -5,6 +5,11 @@ return {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
 
+        "hrsh7th/nvim-cmp",
+        "hrsh7th/cmp-nvim-lsp",
+        "L3MON4D3/LuaSnip",
+        "saadparwaiz1/cmp_luasnip",
+
         "neovim/nvim-lspconfig",
         "onsails/lspkind.nvim",
 
@@ -18,6 +23,7 @@ return {
         local lsp_config = require("lspconfig")
         local lsp_format = require("lsp-format")
         local lspkind = require("lspkind")
+        local luasnip = require("luasnip")
         local cmp = require("cmp")
 
         lsp_zero.on_attach(function(_, bufnr)
@@ -35,23 +41,67 @@ return {
                     -- local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
                     -- client.server_capabilities.completionProvider.triggerCharacters = chars
 
-                    vim.lsp.completion.enable(true, client.id, args.buf, {autotrigger = true})
+                    vim.lsp.completion.enable(true, client.id, args.buf)
                 end
             end
         })
 
         lspkind.init({})
 
+        cmp.setup({
+            formatting = {
+                format = lspkind.cmp_format({
+                    mode = 'symbol', -- show only symbol annotations
+                    maxwidth = {
+                        -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+                        -- can also be a function to dynamically calculate max width such as
+                        -- menu = function() return math.floor(0.45 * vim.o.columns) end,
+                        menu = 50, -- leading text (labelDetails)
+                        abbr = 50, -- actual suggestion item
+                    },
+                    ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+                    show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+                })
+            },
+            snippet = {
+                exapand = function(args)
+                    luasnip.lsp_expand(args.body)
+                end,
+            },
+            window = {
+                completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered(),
+            },
+            mapping = cmp.mapping.preset.insert({
+                ["<C-n>"] = cmp.mapping.select_next_item(),
+                ["<C-p>"] = cmp.mapping.select_prev_item(),
+                ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+                ['<C-f>'] = cmp.mapping.scroll_docs(4),
+                ['<C-Space>'] = cmp.mapping.complete(),
+                ['<C-e>'] = cmp.mapping.abort(),
+                ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+            }),
+            sources = cmp.config.sources({
+                { name = 'nvim_lsp' },
+                { name = 'luasnip' },
+                { name = 'buffer' },
+            })
+        })
+
+        local capabilites = require("cmp_nvim_lsp").default_capabilities()
         require("mason").setup({})
         require("mason-lspconfig").setup({
             ensure_installed = { "rust_analyzer", "clangd", "lua_ls" },
             handlers = {
                 function(name)
-                    lsp_config[name].setup({})
+                    lsp_config[name].setup({
+                        capabilites = capabilites,
+                    })
                 end,
                 clangd = function()
                     lsp_config.clangd.setup({
                         filetypes = { 'c', 'cpp', 'h', 'hpp' },
+                        capabilites = capabilites,
                     })
                 end,
                 lua_ls = function()
@@ -62,7 +112,8 @@ return {
                                     globals = { "vim" }
                                 }
                             }
-                        }
+                        },
+                        capabilites = capabilites,
                     })
                 end,
             }
