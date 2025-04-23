@@ -20,5 +20,13 @@ return {
       })
 
       vim.keymap.set("n", "<leader>pv", oil.open, { desc = "Open parent directory" })
+
+      vim.keymap.set("n", "<leader>oc", function()
+          local dir = oil.get_current_dir()
+          local entry = oil.get_cursor_entry()
+          local entry_name = entry.name
+          local absolute = dir .. entry_name
+          vim.fn.setreg("", absolute)
+      end, { desc = "Copy the absolute path of the current entry" })
   end
 }
