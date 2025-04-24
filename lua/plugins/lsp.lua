@@ -95,11 +95,23 @@ return {
             handlers = {
                 function(name)
                     lsp_config[name].setup({
+                        root_markers = { ".git" },
                         capabilites = capabilites,
+                    })
+                end,
+                ols = function()
+                    lsp_config.ols.setup({
+                        root_markers = { "ols.json", "odinfmt.json", ".git", "src" },
+                    })
+                end,
+                zls = function()
+                    lsp_config.zls.setup({
+                        root_markers = { "build.zig", ".git", "src" },
                     })
                 end,
                 clangd = function()
                     lsp_config.clangd.setup({
+                        root_markers = { ".clangd", ".git", "src" },
                         filetypes = { 'c', 'cpp', 'h', 'hpp' },
                         capabilites = capabilites,
                     })
