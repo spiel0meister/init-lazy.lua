@@ -6,9 +6,6 @@ return {
     config = function()
         require("autoclose").setup({
             keys = {
-                -- ["{"] = { close = true, escape = true, pair = "{}" },
-                -- ["["] = { close = true, escape = true, pair = "[]" },
-                -- ["("] = { close = true, escape = true, pair = "()" },
                 ["("] = { escape = false, close = true, pair = "()" },
                 ["["] = { escape = false, close = true, pair = "[]" },
                 ["{"] = { escape = false, close = true, pair = "{}" },
