@@ -8,6 +8,7 @@ return {
 	config = function()
 		local builtin = require("telescope.builtin")
 
+		vim.keymap.set("n", "<leader>pq", builtin.quickfix, { desc = "Fuzzy search quickfix" })
 		vim.keymap.set("n", "<leader>pm", builtin.man_pages, { desc = "Fuzzy search man pages" })
 		vim.keymap.set("n", "<leader>pf", builtin.find_files, { desc = "Fuzzy search files" })
 		vim.keymap.set("n", "<leader>pcf", function() builtin.find_files({ cwd = vim.fn.stdpath("config") }) end, { desc = "Fuzzy search files in config" })
