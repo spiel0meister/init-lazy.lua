@@ -41,8 +41,8 @@ vim.keymap.set("n", "<leader>ff", "za", { desc = "Toggle fold" })
 -- Move line
 vim.keymap.set("n", "<A-k>", "ddkkp", { desc = "Move line up" })
 vim.keymap.set("n", "<A-j>", "ddp", { desc = "Move line down" })
-vim.keymap.set("v", "<A-k>", "dkkp", { desc = "Move line up (selection)" })
-vim.keymap.set("v", "<A-j>", "dp", { desc = "Move line down (selection)" })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv", { desc = "Move line up (selection)" })
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv", { desc = "Move line down (selection)" })
 
 -- The MIT License
 vim.keymap.set("n", "<leader>MIT", [[i
