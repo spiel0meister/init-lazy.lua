@@ -45,9 +45,6 @@ vim.opt.foldenable = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
--- errorformat for Odin
-vim.opt.errorformat:append { "%f(%l:%c) %m" }
-
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight yanked text",
