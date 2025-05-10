@@ -25,5 +25,5 @@ return {
 
             vim.keymap.set("n", "<leader>dl", direr.toggle_show_dirs, { desc = "Toggle showing directories" })
         end
-    }
+    },
 }
