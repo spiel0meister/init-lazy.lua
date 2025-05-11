@@ -1,5 +1,8 @@
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open explorer" }) -- Replaced by oil.nvim
 
+-- Easier run :make
+vim.keymap.set("n", "<leader>r", "<CMD>mak<CR>")
+
 -- Diagnostics
 vim.keymap.set("n", "<leader>de", vim.diagnostic.open_float, { desc = "Open diagnostics Error Messages" })
 vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "Open diagnostics Quick fixes" })
