@@ -7,5 +7,5 @@ let current_compiler = "odin"
 
 CompilerSet errorformat=
             \%f(%l:%c)\ Syntax\ Error:\ %m,
-            \%f(%l:%c)\ Error:\ %m,
+            \%f(%l:%c)\ Error:\ %m
 
