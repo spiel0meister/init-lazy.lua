@@ -3,6 +3,10 @@
 -- Easier run :make
 vim.keymap.set("n", "<leader>r", "<CMD>mak<CR>")
 
+-- Eval lua
+vim.keymap.set("n", "<leader>x", "<CMD>%lua<CR>")
+vim.keymap.set("v", "<leader>x", "<CMD>lua<CR>")
+
 -- Diagnostics
 vim.keymap.set("n", "<leader>de", vim.diagnostic.open_float, { desc = "Open diagnostics Error Messages" })
 vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "Open diagnostics Quick fixes" })
