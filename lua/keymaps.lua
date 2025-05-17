@@ -13,9 +13,6 @@ vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "Open diag
 vim.keymap.set("n", "<leader>dgn", vim.diagnostic.goto_next, { desc = "Go to next diagnostics" })
 vim.keymap.set("n", "<leader>dgp", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostics" })
 
--- Exotic motions
-vim.keymap.set("n", "<leader>jb", "%", { desc = "Jump to next pair" })
-
 -- Windows
 vim.keymap.set("n", "<leader>ww", "<C-w>", { desc = "Don't have time to press Ctrl+w" })
 vim.keymap.set("n", "<leader>sv", "<C-w><C-v>", { desc = "Split window vertically" })
