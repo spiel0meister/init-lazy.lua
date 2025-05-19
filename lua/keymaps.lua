@@ -1,5 +1,11 @@
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open explorer" }) -- Replaced by oil.nvim
 
+-- Disable arrow keys
+vim.keymap.set("", "<Left>", "<Nop>")
+vim.keymap.set("", "<Right>", "<Nop>")
+vim.keymap.set("", "<Up>", "<Nop>")
+vim.keymap.set("", "<Down>", "<Nop>")
+
 -- Easier run :make
 vim.keymap.set("n", "<leader>r", "<CMD>mak<CR>")
 
@@ -12,14 +18,6 @@ vim.keymap.set("n", "<leader>de", vim.diagnostic.open_float, { desc = "Open diag
 vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "Open diagnostics Quick fixes" })
 vim.keymap.set("n", "<leader>dgn", vim.diagnostic.goto_next, { desc = "Go to next diagnostics" })
 vim.keymap.set("n", "<leader>dgp", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostics" })
-
--- Windows
-vim.keymap.set("n", "<leader>ww", "<C-w>", { desc = "Don't have time to press Ctrl+w" })
-vim.keymap.set("n", "<leader>sv", "<C-w><C-v>", { desc = "Split window vertically" })
-vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
-vim.keymap.set("n", "<leader>wc", "<C-w>c", { desc = "Close window but keep buffer" })
-vim.keymap.set("n", "<leader>wk", "<C-w>o", { desc = "Close all but selected window" })
-vim.keymap.set("n", "<leader>w=", "<C-w>=", { desc = "Re size windows to equal size" })
 
 -- Saving
 vim.keymap.set("n", "<leader>sf", "<CMD>w<CR>", { desc = "Save file" })
