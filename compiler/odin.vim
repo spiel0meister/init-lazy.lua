@@ -9,3 +9,5 @@ CompilerSet errorformat=
             \%f(%l:%c)\ Syntax\ Error:\ %m,
             \%f(%l:%c)\ Error:\ %m
 
+CompilerSet makeprg=./build.sh
+
