@@ -1,10 +1,12 @@
 return {
     {
-        "ggandor/leap.nvim",
-    },
-    {
-        "folke/lazydev.nvim",
-        ft = "lua",
+        "m4xshen/hardtime.nvim",
+        lazy = false,
+        dependencies = { "MunifTanjim/nui.nvim" },
+        config = function()
+            local hardtime = require("hardtime")
+            hardtime.setup()
+        end
     },
     {
         "folke/todo-comments.nvim",
