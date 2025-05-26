@@ -7,11 +7,17 @@ vim.keymap.set("", "<Up>", "<Nop>")
 vim.keymap.set("", "<Down>", "<Nop>")
 
 -- Easier run :make
-vim.keymap.set("n", "<leader>r", "<CMD>mak<CR>")
+vim.keymap.set("n", "<leader>r", "<CMD>mak<CR>", { desc = "Run :make" })
 
 -- Eval lua
-vim.keymap.set("n", "<leader>x", "<CMD>%lua<CR>")
-vim.keymap.set("v", "<leader>x", "<CMD>lua<CR>")
+vim.keymap.set("n", "<leader>x", "<CMD>source %<CR>", { desc = "Source the current file" })
+vim.keymap.set("v", "<leader>x", "<CMD>lua<CR>", { desc = "Run the selected lua code" })
+
+-- Quickfix
+vim.keymap.set("n", "<M-o>", "<CMD>cope<CR>", { desc = "Open the quickfix list" })
+vim.keymap.set("n", "<M-c>", "<CMD>cclose<CR>", { desc = "Close the quickfix list" })
+vim.keymap.set("n", "<M-n>", "<CMD>cnext<CR>", { desc = "Go to the next quickfix entry" })
+vim.keymap.set("n", "<M-p>", "<CMD>cprev<CR>", { desc = "Go to the previous quickfix entry" })
 
 -- Diagnostics
 vim.keymap.set("n", "<leader>de", vim.diagnostic.open_float, { desc = "Open diagnostics Error Messages" })
