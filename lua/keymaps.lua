@@ -14,6 +14,7 @@ vim.keymap.set("n", "<leader>x", "<CMD>source %<CR>", { desc = "Source the curre
 vim.keymap.set("v", "<leader>x", "<CMD>lua<CR>", { desc = "Run the selected lua code" })
 
 -- Quickfix
+-- Do you ever cope?
 vim.keymap.set("n", "<M-o>", "<CMD>cope<CR>", { desc = "Open the quickfix list" })
 vim.keymap.set("n", "<M-c>", "<CMD>cclose<CR>", { desc = "Close the quickfix list" })
 vim.keymap.set("n", "<M-n>", "<CMD>cnext<CR>", { desc = "Go to the next quickfix entry" })
