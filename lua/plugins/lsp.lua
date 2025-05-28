@@ -89,7 +89,7 @@ return {
             })
         })
 
-        local capabilites = require("cmp_nvim_lsp").default_capabilities()
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
         require("mason").setup({})
         require("mason-lspconfig").setup({
             ensure_installed = { "rust_analyzer", "clangd", "lua_ls" },
@@ -97,7 +97,7 @@ return {
                 function(name)
                     lsp_config[name].setup({
                         root_markers = { ".git" },
-                        capabilites = capabilites,
+                        capabilites = capabilities,
                     })
                 end,
                 ols = function()
@@ -114,7 +114,7 @@ return {
                     lsp_config.clangd.setup({
                         root_markers = { ".clangd", ".git", "src" },
                         filetypes = { 'c', 'cpp', 'h', 'hpp' },
-                        capabilites = capabilites,
+                        capabilites = capabilities,
                     })
                 end,
                 lua_ls = function()
@@ -126,7 +126,7 @@ return {
                                 }
                             }
                         },
-                        capabilites = capabilites,
+                        capabilites = capabilities,
                     })
                 end,
             }
